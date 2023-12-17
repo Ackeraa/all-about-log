@@ -1,4 +1,4 @@
-# all-about-text
+# all-about-log
 ## It can be used to Practice
 * cat
 * less/more
@@ -25,5 +25,8 @@
   * info
 * json stuff
   * nest json
-  * 
-* 
+  * some errors in json
+* empty lines
+
+## Tasks
+
