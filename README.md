@@ -128,51 +128,68 @@ sed -n '/19:00:00/,/24:59:59/{/\[ERROR\]/p;}' log | sort -k2.4,2.5 -k2.1,2.2 # s
 awk '/(19|2[0-3]):..:.. \[ERROR\]/' log
 ```
 
+### Find all lines start/end with 2023-12-20
+
+```shell
+grep '^2023-12-20' log
+grep '2023-12-20$' log
+```
+
+```shell
+sed -n '/^2023-12-20/' log
+sed -n '/2023-12-20$/' log
+```
+
+```shell
+awk '/^2023-12-20/{ print $0 }' log
+awk '/2023-12-20$/{ print $0 }' log
+```
+
 ### Find in multiple files
 
-```bash
+```shell
 grep -r 'ERROR' # find in current directory
 ```
 
-```bash
+```shell
 grep -rl 'ERROR' # only show file names
 ```
 
-```bash
+```shell
 grep -rl --exclude='*.py' ERROR # exclude all .py files
 grep -rl --exclude-dir='.git' ERROR # exclude a directory
 ```
 
-```bash
+```shell
 grep -rl --include='log*' ERROR # include only log files
 grep -rl --include-dir='.' ERROR # include a directory
 ```
 
-```bash
+```shell
 grep -l "DEBUG" **/*(.) # zsh include all files in all directories
 ```
 
-```bash
+```shell
 find . -type f -iname 'log*' # find all files named 'log*' in current directory, ignore case
 ```
 
-```bash
+```shell
 find . -not -name 'log*' # find all files not named 'log*'
 ```
 
-```bash
+```shell
 find . -mtime +7 # find files that were modified more than 7 days back in current directory
 ```
 
-```bash
+```shell
 find . -size +10k # find files with size greater than 10 kilobytes in current directory
 ```
 
-```bash
+```shell
 find . -type f -name 'log*' -exec wc -l {} + # count lines of all log* files
 ```
 
-```bash
+```shell
 find . -type f -name 'log*' -exec mv {} . \;
 ```
 
