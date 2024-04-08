@@ -112,11 +112,6 @@ awk '/ERROR/ && /a.cpp/' log
 grep "ERROR" log | grep -o "[a-z]*.cpp" | sort | uniq
 ```
 
-```shell
-
-```
-
-
 ### Find  all "ERROR" that appeared between 19:00:00 and 24:00:00
 
 ```shell
