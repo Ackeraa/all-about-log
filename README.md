@@ -106,6 +106,17 @@ sed -n "/ERROR/{/a.cpp/p;}" log
 awk '/ERROR/ && /a.cpp/' log
 ```
 
+### Find all file names containing 'ERROR'
+
+```shell
+grep "ERROR" log | grep -o "[a-z]*.cpp" | sort | uniq
+```
+
+```shell
+
+```
+
+
 ### Find  all "ERROR" that appeared between 19:00:00 and 24:00:00
 
 ```shell
