@@ -106,6 +106,10 @@ sed -n "/ERROR/{/a.cpp/p;}" log
 awk '/ERROR/ && /a.cpp/' log
 ```
 
+### Find 'ERROR' in "a.cpp" between line x to line y
+```shell
+```
+
 ### Find all file names containing 'ERROR'
 
 ```shell
