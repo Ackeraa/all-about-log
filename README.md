@@ -106,10 +106,6 @@ sed -n "/ERROR/{/a.cpp/p;}" log
 awk '/ERROR/ && /a.cpp/' log
 ```
 
-### Find 'ERROR' in "a.cpp" between line x to line y
-```shell
-```
-
 ### Find all file names containing 'ERROR'
 
 ```shell
@@ -126,6 +122,11 @@ grep "ERROR" log | grep -io "[a-z]*.cpp" | sort | uniq -c | sort -nr
 
 ```shell
 grep -E '(19|2[0-3]):..:.. \[ERROR\]' log
+```
+
+### Find 'ERROR' in "a.cpp" between line 100 and line 200
+```shell
+grep 'ERROR] a.cpp' log | awk -F'[: ]' '$8 >= 100 && $8 <=200'
 ```
 
 ```shell
